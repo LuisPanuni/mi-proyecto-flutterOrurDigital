@@ -1,3 +1,4 @@
+
 name: Deploy Flutter Web
 
 on:
@@ -30,7 +31,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Flutter Web
-        run: flutter build web --release
+        run: flutter build web --release --base-href "/mi-proyecto-flutterOrurDigital/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -39,12 +40,3 @@ jobs:
           publish_dir: flutter_application_1/build/web
           publish_branch: gh-pages
           force_orphan: true
-
-      - name: Show Website URL
-        run: |
-          echo "=========================================="
-          echo "🚀 ¡WEB PUBLICADA!"
-          echo "=========================================="
-          echo "🌐 https://LuisPanuni.github.io/mi-proyecto-flutterOrurDigital/"
-          echo "=========================================="
-
