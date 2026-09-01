@@ -38,4 +38,13 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: flutter_application_1/build/web
           publish_branch: gh-pages
+          force_orphan: true
+
+      - name: Show Website URL
+        run: |
+          echo "=========================================="
+          echo "🚀 ¡WEB PUBLICADA!"
+          echo "=========================================="
+          echo "🌐 https://LuisPanuni.github.io/mi-proyecto-flutterOrurDigital/"
+          echo "=========================================="
 
