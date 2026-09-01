@@ -24,9 +24,11 @@ jobs:
           channel: stable
 
       - name: Flutter Pub Get
+        working-directory: ./flutter_application_1
         run: flutter pub get
 
       - name: Build Web
+        working-directory: ./flutter_application_1
         run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
 
       - name: Setup Pages
@@ -35,7 +37,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/web
+          path: flutter_application_1/build/web
 
       - name: Deploy
         uses: actions/deploy-pages@v4
